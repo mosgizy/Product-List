@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite & json-server --watch data.json",
-    "build": "vite build & json-server --watch data.json",
+    "build": "vite build",
     "preview": "vite preview",
     "server": "json-server --watch data.json"
   },
