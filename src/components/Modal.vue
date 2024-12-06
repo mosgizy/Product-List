@@ -1,6 +1,5 @@
 <script setup>
-import { defineProps } from "vue";
-defineProps(["cartItems", "startNewOrder", "totalPrice"]);
+defineProps(["cartItems", "startNewOrder", "totalPrice", "toggleModal"]);
 </script>
 
 <template>

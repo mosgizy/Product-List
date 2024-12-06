@@ -130,6 +130,7 @@ onMounted(() => {
       :cartItems='cartItems'
       :startNewOrder='startNewOrder'
       :totalPrice="totalPriceOfItemsInCart"
+      :toggleModal="toggleModal"
     />
   </main>
 </template>
