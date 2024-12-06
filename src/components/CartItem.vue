@@ -58,7 +58,7 @@ const handleIncreement = computed(() => {
 
 <template>
   <div>
-    <div class="relative max-w-max">
+    <div class="relative w-full lg:max-w-max">
       <img
         :src="data.image.desktop"
         :alt="data.name"
@@ -67,7 +67,7 @@ const handleIncreement = computed(() => {
       />
       <div
         v-if="inCart"
-        class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-primary-100 font-bold text-sm text-white flex items-center justify-center gap-10 rounded-full border border-secondary-400 py-2 px-3"
+        class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-primary-100 font-bold text-xs lg:text-sm text-white flex items-center justify-center gap-10 rounded-full border border-secondary-400 py-2 px-3"
       >
         <button
           @click="handleDecrement"
@@ -92,7 +92,7 @@ const handleIncreement = computed(() => {
       <button
         v-if="!inCart"
         @click="handleAddToCart"
-        class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white text-secondary-600 hover:text-primary-100 flex justify-center gap-2 max-w-max rounded-full border border-secondary-400 hover:border-primary-100 py-3 px-5 transition-all"
+        class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white text-secondary-600 hover:text-primary-100 flex justify-center gap-2 max-w-max rounded-full border border-secondary-400 hover:border-primary-100 py-3 px-2 min-w-[15ch] lg:px-5 transition-all"
       >
         <img
           :src="addToCart"
@@ -102,9 +102,9 @@ const handleIncreement = computed(() => {
         <span class="font-bold text-xs">Add to Cart</span>
       </button>
     </div>
-    <div class="mt-10">
-      <div class="text-secondary-300 text-sm font-semibold">{{data.category}}</div>
-      <p class="font-semibold text-secondary-600 py-1">{{data.name}}</p>
+    <div class="mt-10 text-xs lg:text-sm">
+      <div class="text-secondary-300 font-semibold">{{data.category}}</div>
+      <p class="font-semibold text-secondary-600 py-[2px] lg:py-1">{{data.name}}</p>
       <div class="text-primary-100 font-semibold">${{data.price}}</div>
     </div>
   </div>

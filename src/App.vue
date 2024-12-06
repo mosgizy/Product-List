@@ -55,10 +55,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class=" bg-secondary-100 px-16 py-24 flex gap-8">
-    <section class="flex-1 w-64">
+  <main class="flex flex-col md:flex-row bg-secondary-100 px-3 py-8 lg:px-16 lg:py-24 gap-8">
+    <section class="flex-1 lg:w-64">
       <h1 class="text-3xl font-bold mb-10">Desserts</h1>
-      <section class="grid grid-cols-3 gap-4">
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <CartItem
           v-for="product in products"
           :key="product.id"
@@ -68,8 +68,8 @@ onMounted(() => {
         />
       </section>
     </section>
-    <aside class="bg-white max-h-max max-w-[40ch] px-6 py-8 flex-1">
-      <h2 class="text-primary-100 text-xl font-semibold">Your Cart ({{totalNumberOfItemsInCart}})</h2>
+    <aside class="bg-white max-h-max max-w-[40ch] px-3 lg:px-6 py-8 flex-1">
+      <h2 class="text-primary-100 lg:text-xl font-semibold">Your Cart ({{totalNumberOfItemsInCart}})</h2>
       <div
         v-if="cartItems.length < 1"
         class="flex flex-col items-center mt-8"
@@ -78,7 +78,7 @@ onMounted(() => {
           src="/images/illustration-empty-cart.svg"
           alt="empty cart"
         >
-        <p class="text-center text-sm text-secondary-400 font-semibold mt-2">Your added items will appear here</p>
+        <p class="text-center text-[8px] lg:text-sm text-secondary-400 font-semibold mt-2">Your added items will appear here</p>
       </div>
       <div v-if="totalNumberOfItemsInCart > 0">
         <div
@@ -87,8 +87,8 @@ onMounted(() => {
           class="flex items-center justify-between mt-6"
         >
           <div>
-            <h3 class="text-sm text-secondary-600 font-semibold pb-2">{{item.data.name}}</h3>
-            <div class="flex items-center gap-3 text-sm font-semibold">
+            <h3 class="text-xs lg:text-sm text-secondary-600 font-semibold pb-2">{{item.data.name}}</h3>
+            <div class="flex items-center gap-3 text-[10px] lg:text-sm font-semibold">
               <span class="text-primary-100">{{item.numberOfItems}}x</span>
               <span class="text-secondary-400">@ ${{item.data.price}}</span>
               <span class="text-secondary-500">${{item.numberOfItems * item.data.price}}</span>
@@ -105,19 +105,19 @@ onMounted(() => {
           </button>
         </div>
         <div class="flex justify-between items-center my-5 pt-5 border-t border-secondary-200">
-          <div class="text-secondary-500 text-sm">Order Total</div>
-          <h2 class="text-2xl font-bold">${{totalPriceOfItemsInCart}}</h2>
+          <div class="text-secondary-500 text-xs lg:text-sm">Order Total</div>
+          <h2 class="text-lg lg:text-2xl font-bold">${{totalPriceOfItemsInCart}}</h2>
         </div>
-        <div class="bg-secondary-200/80 px-6 py-4 rounded-3xl flex justify-center gap-2">
+        <div class="bg-secondary-200/80 px-3 lg:px-6 py-4 rounded-3xl flex justify-center items-center gap-1 lg:gap-2">
           <img
             src="/images/icon-carbon-neutral.svg"
             alt="carbon"
           >
-          <div class="text-sm text-secondary-600">This is a <span class="font-bold">Carbon-neutral</span> delivery</div>
+          <div class="text-[10px] lg:text-sm text-secondary-600">This is a <span class="font-bold">Carbon-neutral</span> delivery</div>
         </div>
         <button
           @click="toggleModal"
-          class="rounded-3xl bg-primary-100 hover:bg-secondary-500 transition-all text-white text-sm font-semibold mt-8 px-6 py-3 w-full"
+          class="rounded-3xl bg-primary-100 hover:bg-secondary-500 transition-all text-white text-xs lg:text-sm font-semibold mt-8 px-6 py-3 w-full"
         >
           Confirm Order
         </button>
